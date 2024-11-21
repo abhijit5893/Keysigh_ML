@@ -22,7 +22,10 @@ def success(url):
 
 @app.route('/url/<url>')
 def access_url(url):
-    return redirect('http://www.google.com')
+    if check_expiry(url):
+        return 'URL has expired'
+    long_url = fetch_url(url)
+    return redirect(long_url)
 
 def hash(input):
     short = ''.join(secrets.choice(chars) for i in range(length))
@@ -33,9 +36,11 @@ def hash(input):
 def create_url():
     if request.method == 'POST':
         long_url = request.form['url']
+        expiry = request.form['expiry']
         short_url_hash = hash(long_url)
         if check_availability(short_url_hash):
-            insert_url(short_url_hash, long_url, short_url_hash)
+            print("-----", expiry)
+            insert_url(short_url_hash, long_url, short_url_hash, expiry)
             return redirect(url_for('success', url=short_url_hash))
         else:
             return redirect(url_for('create_url'))
