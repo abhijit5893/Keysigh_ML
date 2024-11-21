@@ -8,6 +8,15 @@ Design an URL Shortener API with following features:
     a. Generate a unique short URL for a given long URL
     b. Redirect the user to the original URL when the short URL is accessed
     c. Support link expiration where URLs are no longer accessible after a certain period.
-    
+
 ## B) Operational requirement:
     a. Think of how you can maintain high availability and scalability
+
+# Run
+
+to run the program from your terminal, navigate into your src directory and execute
+
+flask run
+
+Go to your browser to 
+    http://127.0.0.1:5000/ to generate a unique short URL
