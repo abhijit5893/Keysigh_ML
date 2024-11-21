@@ -39,3 +39,15 @@ def insert_url(hash, long_url, short_url, expiry):
     c = conn.cursor()
     c.execute("INSERT INTO urls VALUES (?, ?, ?, ?, ?)", (hash, long_url, short_url, now.strftime("%Y-%m-%d %H:%M:%S"), expiry_date))
     conn.commit()
+
+def delete_url(hash):
+    conn = sqlite3.connect('url.db')
+    c = conn.cursor()
+    c.execute("DELETE FROM urls WHERE hash = ?", (hash,))
+    conn.commit()
+
+def delete_expired_urls():
+    conn = sqlite3.connect('url.db')
+    c = conn.cursor()
+    c.execute("DELETE FROM urls WHERE expiry < datetime('now')")
+    conn.commit()

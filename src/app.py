@@ -23,6 +23,7 @@ def success(url):
 @app.route('/url/<url>')
 def access_url(url):
     if check_expiry(url):
+        delete_url(url)
         return 'URL has expired'
     long_url = fetch_url(url)
     return redirect(long_url)
