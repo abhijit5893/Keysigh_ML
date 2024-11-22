@@ -67,3 +67,9 @@ To handle 1000s of requests at the same time, we can use a load balancer
 We have 62^8 available random combinations that are difficult to guest and readily available
 
 We can cached some of the most frequented URLs 
+
+## Testing
+
+Functional Testing - Done
+
+Pytests for functions - Not complated
