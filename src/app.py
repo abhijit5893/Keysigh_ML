@@ -14,7 +14,7 @@ with app.app_context():
 
 format = 'utf-8'
 length = 8
-chars = string.ascii_letters + string.digits + '-'
+chars = string.ascii_letters + string.digits
 
 @app.route('/success/<url>')
 def success(url):
