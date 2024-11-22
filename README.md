@@ -20,7 +20,7 @@ Run
 
     pip install -r requirements.txt 
 
-Once installed, to run the program , navigate into your src directory and execute
+Once installed, to run the program , navigate into your src directory (cd src) and execute
 
     flask run
 
@@ -71,5 +71,7 @@ We can cached some of the most frequented URLs
 ## Testing
 
 Functional Testing - Done
+
+![](demo.mp4)
 
 Pytests for functions - Not complated
