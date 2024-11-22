@@ -18,7 +18,7 @@ chars = string.ascii_letters + string.digits
 
 @app.route('/success/<url>')
 def success(url):
-    return 'Shortened URL: http://127.0.0.1:5000/url/%s' % url
+    return 'Shortened URL: <a href="http://127.0.0.1:5000/url/%s"> http://127.0.0.1:5000/url/%s </a>' %( url, url)
 
 @app.route('/url/<url>')
 def access_url(url):
@@ -40,7 +40,6 @@ def create_url():
         expiry = request.form['expiry']
         short_url_hash = hash(long_url)
         if check_availability(short_url_hash):
-            print("-----", expiry)
             insert_url(short_url_hash, long_url, short_url_hash, expiry)
             return redirect(url_for('success', url=short_url_hash))
         else:
