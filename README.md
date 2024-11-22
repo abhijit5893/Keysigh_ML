@@ -64,9 +64,9 @@ This system is designed as an API call.
 
 To handle 1000s of requests at the same time, we can use a load balancer
 
-We have 62^8 available random combinations that are difficult to guest and readily available
+We have 62^8 available random combinations that are difficult to guess and readily available
 
-We can cached some of the most frequented URLs 
+We can cache some of the most frequented URLs 
 
 ## Testing
 
